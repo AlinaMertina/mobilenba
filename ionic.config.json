@@ -3,5 +3,11 @@
   "integrations": {
     "capacitor": {}
   },
-  "type": "react-vite"
+  "type": "react-vite",
+  "proxies": [
+    {
+      "path": "/varotrafiaraback/",
+      "proxyUrl": "http://localhost:8080/varotrafiaraback/"
+    }
+  ]
 }
