@@ -11,8 +11,10 @@ const Intro_key = 'intro-seen';
 
 const Accuiel: React.FC = () => {
   const router = useIonRouter();
+
   const initializeMapping = async () => {
     await storage.set('mapping', 'http://localhost:8080/varotrafiaraback/');
+    await storage.set('mappingimage', 'http://localhost:8080/images/');
       try {
         const response = await fetch("http://localhost:8080/varotrafiaraback/initialisation", {
           method: 'GET', // Méthode HTTP (peut être GET, POST, etc.)
@@ -28,12 +30,11 @@ const Accuiel: React.FC = () => {
         const data = await response.json();
         await storage.set('select',data );
         console.log("genre valeur");
-        console.log(data.data.genre);
+        console.log(data);
       } catch (error) {
         console.error('Erreur:', error);
         throw error;
       }
-    
   };
  
   const login = (event: any) =>{

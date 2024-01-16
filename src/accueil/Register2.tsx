@@ -42,6 +42,7 @@ const Register2: React.FC = () => {
     console.log('dologin');
     router.push('/home','root');
   }
+
   //fonction forme 
   const handlerEmail = (event: any) => {
     let client = user;
@@ -67,6 +68,7 @@ const Register2: React.FC = () => {
     SetInfouser(client);
   };
 
+  
   const onsub = async (event:any)=>{
     console.log("liste user");
     console.log( user );

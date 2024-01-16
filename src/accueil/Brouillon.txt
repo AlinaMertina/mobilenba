@@ -1,0 +1,46 @@
+<IonPage>
+      
+        <img src={FCC} alt="FCC" className='loginback' />
+        <div className='contentcadreregister1' >
+          <b className='welcomeannonce1'>Annonce 3</b>
+          <form onSubmit={onsub}>
+              <button className='suivant' type='submit'>
+                  <IonIcon icon={arrowForwardOutline} className='iconelog'/>
+              </button>
+              <div className='buttonlogin1'>
+                    <IonInput fill='outline' labelPlacement="floating" label='Annee de Fabrication' type='date' className='inputtype' onIonChange={handlDatefabrication}></IonInput>
+                    {/* <IonInput fill='outline' labelPlacement="floating" label='Anne model' type='date' className='inputtype'></IonInput> */}
+                    <IonInput fill='outline' labelPlacement="floating" label='Capacite en L' className='inputtype' onIonChange={handlereCapacite}></IonInput>
+                    <IonInput fill='outline' labelPlacement="floating" label='Consomation en L/100km' className='inputtype' onIonChange={handlereConsomation}></IonInput>
+
+              </div>
+          </form>
+              
+         
+              <button className='precedent' onClick={accuiel}>
+                  <IonIcon icon={arrowBackOutline} className='iconelog'/>
+              </button>
+          
+        </div>
+      
+    </IonPage>
+    
+<>
+     <Menu></Menu>
+      <IonPage id="main-content"  >
+
+        <IonHeader >
+          <IonToolbar >
+            <IonButtons slot="start">
+              <IonMenuButton></IonMenuButton>
+            </IonButtons>
+            <IonTitle>Menu</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+
+        <IonContent className="ion-padding">
+        
+        </IonContent>
+
+      </IonPage>
+    </>

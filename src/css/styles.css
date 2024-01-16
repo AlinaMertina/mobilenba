@@ -1,3 +1,143 @@
+.titremodifannonce{
+    color: #178CA4;
+    text-align: center;
+}
+
+.a_modifannonce{
+    width: 100%;
+}
+.modif_annonce{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.a_iconelog{
+    float: right;
+    font-size: 15px;
+    text-align: center;
+}
+.a_titre {
+ text-align: center;
+}
+.a_imagechild ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 4%;
+  }
+
+  
+ .a_imagechild li {
+    flex: 0 0 100%; /* 25% width for each item to create 4 items in a row */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    padding: 5px; /* Adjust padding as needed */
+}
+
+.modifimage{
+    display: none;
+    margin-top: 10%;
+}
+.centerdate{
+    text-align: center;
+}
+.welcomedetaille{
+    font-size: 20px;
+    color: #178CA4;
+    text-align: center;
+}
+.enregistrement{
+    margin-top: 2%;
+    float: right;
+}
+.welcomesetting{
+    font-size: 15px;
+    color: #178CA4;
+    text-align: left;
+   
+}
+.lignedroit{
+    text-align: right;
+}
+.settingame{
+
+    display: none;
+}
+.ligne{
+    font-size: 17px;
+    text-align: left;
+}
+.settinginfo{
+    display: block;
+}
+.titelname{
+    width: 80%;
+}
+.ionicname{
+    width: 25%;
+}
+.imagescript{
+    width: 100%;
+    height: 100%;
+}
+.header1{
+    background-color: #178CA4;
+}
+.a_{
+    height: 60%;
+}
+.a_description{
+    height: 90%;
+}
+.a_paragraphe{
+    overflow-y: scroll;
+    
+}
+.a_imagechild li{
+    display: inline;
+    text-decoration: none;
+    margin: 1%;
+}
+.a_i_enfant{
+    width: 60px;
+    height:60px;
+    margin: 2%;
+}
+.a_i_presentation{
+    width: 40%;
+    height: 40%;
+    margin-left: 30%;
+}
+h1, .title {
+    font-family: 'Roboto', sans-serif; /* Exemple de famille de police */
+    font-weight: bold;
+    font-size: 2.5em; /* Ajustez la taille selon vos besoins */
+    color: #333; /* Couleur du texte pour le titre */
+}
+
+.prix{
+    margin-left: 15%;
+}
+.iconefooter{
+    width: 100%;
+    margin-top: -3%;
+}
+.linavfooterd{
+    float: right;
+   
+}
+.linavfooterg{
+    float: left;
+    margin-left: 0%;
+}
+.corpsfooter{
+    z-index: 2;
+    top:92%;
+    left: -1%;
+    position: absolute;
+    width: 100%;
+    margin-left: 1%;
+}
 .welcomeannonce1{
     font-size: 25px;
     color: #178CA4;
@@ -8,8 +148,8 @@
 .nomodel{
     color: #178CA4;
     text-align: center;
-    margin-left: 20%;
     margin-bottom: 2%;
+    margin-left: 5%;
 }
 b{
     margin-bottom: 2%;
@@ -63,6 +203,7 @@ b{
 } */
 .listnav1{
    height: 10%;
+   padding: 0%;
 }
 .listnav1 li{
     /* border: 1px solid rgb(00, 00, 00); */
@@ -77,6 +218,7 @@ b{
 }
 .footerpresentation{
     display: block;
+    margin: 0%;
     margin-top: -2%;
     width: 100%;
     /* border: 1px solid rgb(00, 00, 00); */
@@ -90,9 +232,12 @@ b{
     /* border: 1px solid rgb(00, 00, 00); */
 }
 .representation{
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
     border-radius: 36px;
-    border: 1px solid rgb(120, 00, 00);
+    /* border: 1px solid rgb(120, 00, 00); */
     margin-bottom: 5%;
+    margin-left: 5%;
+    margin-top: 1%;
 }
 .imagepresentation1 img{
     width:100% ;
@@ -100,7 +245,7 @@ b{
     margin-left: 3%;
 }
 .representation{
-    border: 1px solid rgb(00, 00, 00);
+    border: 1px solid rgb(255, 255, 255);
     width: 80%;
     /* height:37%; */
 }
@@ -112,8 +257,10 @@ b{
 .corps{
     z-index: 2;
     top:15%;
-    left: 13%;
+    left: 5%;
     position: absolute;
+    width: 100%;
+    margin-left: 1%;
 }
 .iconelog1{
     font-size: 40px;
@@ -150,7 +297,7 @@ b{
 }
 .contentcadreregister1{
     z-index: 2;
-    top:30%;
+    top:20%;
     position: absolute;
 }
 .suivant{
@@ -205,7 +352,7 @@ b{
 .buttonlogin1{
     width: 100%;
     margin-top: 10%;
-    margin-left: 35%;
+    margin-left: 10%;
 }
 .buttonlogin{
     width: 100%;

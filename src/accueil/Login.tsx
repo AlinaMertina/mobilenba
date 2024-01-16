@@ -14,25 +14,32 @@ const Login: React.FC = () => {
   // fonction forme
     const handleremail = (event: any) => {
       const password = user.password;
-      const newuser = new Connexion(event.target.value,password);
-      // console.log( newuser );
-      setUser(newuser);
+      user.pseudo=event.target.value;
+      setUser(user);
+      console.log(user);
     };
     const handlerepassword = (event: any) => {
-      const email = user.pseudo;
-      const newuser = new Connexion(email,event.target.value);
-      // console.log( newuser );
-      setUser(newuser);
+      user.password=event.target.value;
+      setUser(user);
+      console.log(user);
     };
     const onsub = async (event:any)=>{
       console.log( user );
       event.preventDefault();
       const lien =  await storage.get("mapping");
       await user.connect(lien+"connexion");
-      router.push('/','root');
+      const verification = await storage.get("userinfo");
+      if(verification){
+        await storage.set('idclient',verification.idclient);
+        console.log("verification");
+        console.log(verification);
+        router.push('/home','root')
+      }else{
+        console.log(verification);
+        router.push('/','root')
+      }
     }
 
-  
   const [exampleState, setExampleState] = useState<string>('');
   const router = useIonRouter();
   const accuiel = (event: any) =>{
@@ -52,10 +59,8 @@ const Login: React.FC = () => {
   return (
     <IonPage  >
         <img src={FCC} alt="FCC" className='loginback' />
-        
         <div className='contentcadrelogin' >
           <b className='welcomelogin'>Login</b>
-              
               <form onSubmit={onsub}> 
               <button className='suivant'  type='submit' >
                   <IonIcon icon={arrowForwardOutline} className='iconelog'/>
@@ -70,7 +75,6 @@ const Login: React.FC = () => {
               <button className='precedent' onClick={accuiel}>
                   <IonIcon icon={arrowBackOutline} className='iconelog'/>
               </button>
-          
         </div>
       
     </IonPage>

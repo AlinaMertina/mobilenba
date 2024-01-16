@@ -36,7 +36,7 @@ class Caracteristique{
         this.autonomie=autonomie;
         this.kilometrage=kilometrage;
         this.anneedefabrication=annedefabrication;
-        this.annemodel=new Date();
+        this.annemodel= this.formatDate(new Date());
         this.capacite=capacite;
         this.consomation=consomation;
         this.prixdevente=prixdevent;
@@ -49,4 +49,34 @@ class Caracteristique{
         this.volumeducoffre=volumeducoffre;
         this.commission=commission;
     }
+    async insert(lien:any) : Promise<void> {
+        try {
+            const response = await fetch(lien, {
+            method: 'POST', // Méthode HTTP (peut être GET, POST, etc.)
+            headers: {
+                'Content-Type': 'application/json' // Type de contenu de la requête
+            },
+            body: JSON.stringify(this) // Données à envoyer (sous forme JSON ici)
+            });
+
+            if (!response.ok) {
+            throw new Error('Problème lors de la récupération des données');
+            }
+            const data = await response.json();
+            console.log(data)
+            return data;
+        } catch (error) {
+            console.error('Erreur:', error);
+            throw error;
+        }
+        }
+        formatDate(inputDate:any){
+            const date = new Date(inputDate);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const formattedDate = `${year}-${month}-${day}`;
+            return formattedDate;
+          };
 }
+export default Caracteristique;

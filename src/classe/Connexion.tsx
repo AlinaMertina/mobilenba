@@ -1,3 +1,4 @@
+import storage from './../storage/Storage';
 class Connexion{
     pseudo;
     password;
@@ -5,8 +6,7 @@ class Connexion{
     constructor(n:string ,p:string) {
         this.pseudo = n;
         this.password=p;
-        this.role="ADMIN";
-        
+        this.role="USER";
       }
       async connect(lien:any) : Promise<void> {
         try {
@@ -22,7 +22,11 @@ class Connexion{
             throw new Error('Problème lors de la récupération des données');
           }
           const data = await response.json();
-          console.log(data)
+          console.log(data);
+          if(data.error==null){
+            await storage.set("userinfo",data.data.client);
+            await storage.set("token",data.data.token);
+          }
           return data;
         } catch (error) {
           console.error('Erreur:', error);

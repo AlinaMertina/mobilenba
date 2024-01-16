@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {IonHeader,IonContent,IonPage,IonTitle,IonToolbar,IonCard,IonCardContent,IonInput,IonButton,IonIcon,useIonRouter,IonSelect,IonSelectOption} from '@ionic/react';
+import {IonHeader,IonContent,IonPage,IonTitle,IonToolbar,IonCard,IonCardContent,IonInput,IonButton,IonIcon,useIonRouter,IonSelect,IonSelectOption,IonButtons,IonMenuButton} from '@ionic/react';
 import { arrowBackOutline,arrowForwardOutline } from 'ionicons/icons';
 import FCC from '../image/Loginback.png';
 import './../css/styles.css';
@@ -7,7 +7,9 @@ import Marque from '../classe/Marque';
 import Model from '../classe/Model';
 import Energie from '../classe/Energie';
 import Boitdevitesse from '../classe/Boitdevitesse';
+import Caracteristique from '../classe/Caracteristique';
 import storage from '../storage/Storage';
+import Menu  from './../accueil/Menu';
 const Intro_key = 'intro-seen';
 
 const Annonce: React.FC = () => {
@@ -44,39 +46,78 @@ const Annonce: React.FC = () => {
     console.log('dologin');
     router.push('/annonce1','root');
   }
+  //forme fonction
+  let infAnnonce = new Caracteristique(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+  const [annonce , SetAnnonce] = useState(infAnnonce);
+  const handleremarque = (event: any) => {
+    annonce.idfmarque=event.target.value;
+    SetAnnonce(annonce);
+  };
+  const handleremodel = (event: any) => {
+    annonce.idfmodel=event.target.value;
+    SetAnnonce(annonce);
+  };
+  const handlerenergie = (event: any) => {
+    annonce.idfenergie=event.target.value;
+    SetAnnonce(annonce);
+  };
+  const handlerboitdevitesse = (event: any) => {
+    annonce.idfboitedevitesse=event.target.value;
+    SetAnnonce(annonce);
+  };
+  const onsub = async (event:any)=>{
+    console.log( annonce );
+    event.preventDefault();
+    await storage.set("annonce",annonce);
+    router.push('/annonce1','root');
+  }
+  //fin forme focntion 
 
   return (
-    <IonPage  >
-        <img src={FCC} alt="FCC" className='loginback' />
-        
-        <div className='contentcadreregister1' >
+    <>
+     <Menu></Menu>
+      <IonPage id="main-content"  >
+
+        <IonHeader >
+          <IonToolbar >
+            <IonButtons slot="start">
+              <IonMenuButton></IonMenuButton>
+            </IonButtons>
+            <IonTitle>Menu</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+
+    <IonContent className="ion-padding">
+    <img src={FCC} alt="FCC" className='loginback' />
+      <div className='contentcadreregister1' >
           <b className='welcomeannonce1'>Annonce 1</b>
-              <button className='suivant' onClick={register2}>
+          <form onSubmit={onsub}>
+              <button className='suivant' type='submit'>
                   <IonIcon icon={arrowForwardOutline} className='iconelog'/>
               </button>
               <div className='buttonlogin1'>
-                      <IonSelect label="Marque" placeholder=""  className='inputtype'>
+                      <IonSelect label="Marque" placeholder=""  className='inputtype' onIonChange={handleremarque}>
                         {marques.map((marque, index) => (
                           <IonSelectOption key={index} value={marque.idmarque}>
                             {marque.nommarque}
                           </IonSelectOption>
                         ))}
                       </IonSelect>
-                      <IonSelect label="Model" placeholder=""  className='inputtype'>
+                      <IonSelect label="Model" placeholder=""  className='inputtype' onIonChange={handleremodel}>
                         {models.map((model, index) => (
                           <IonSelectOption key={index} value={model.idmodel}>
-                            {model.nommodel}
+                            {model.nommarque} {model.nommodel}
                           </IonSelectOption>
                         ))}
                       </IonSelect>
-                      <IonSelect label="Energie" placeholder=""  className='inputtype'>
+                      <IonSelect label="Energie" placeholder=""  className='inputtype' onIonChange={handlerenergie}>
                         {energies.map((energie, index) => (
                           <IonSelectOption key={index} value={energie.idenergie}>
                             {energie.nomenergie}
                           </IonSelectOption>
                         ))}
                       </IonSelect>
-                      <IonSelect label="Boite de vitesse" placeholder=""  className='inputtype'>
+                      <IonSelect label="Boite de vitesse" placeholder=""  className='inputtype' onIonChange={handlerboitdevitesse}>
                         {boitdevitesses.map((boitdevitesse, index) => (
                             <IonSelectOption key={index} value={boitdevitesse.idboitedevitesse}>
                               {boitdevitesse.nomboitdereception}
@@ -84,14 +125,19 @@ const Annonce: React.FC = () => {
                           ))}
                       </IonSelect>
               </div>
+          </form>
+
+              
          
               <button className='precedent' onClick={accuiel}>
                   <IonIcon icon={arrowBackOutline} className='iconelog'/>
               </button>
           
         </div>
-      
-    </IonPage>
+        </IonContent>
+
+      </IonPage>
+    </>
   );
 };
 

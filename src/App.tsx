@@ -30,8 +30,15 @@ import Annonce from './annonce/Annonce';
 import Annonce1 from './annonce/Annonce1';
 import Annonce2 from './annonce/Annonce2';
 import Annonce3 from './annonce/Annonce3';
-import Annonce4 from './annonce/Annonce4';
+import ImageFormPage from './annonce/ImageFormPage';
+import ImageFormPage1 from './annonce/ImageFormPage1';
+
 import Annonce5 from './annonce/Annonce5';
+import Annoncephoto from './annonce/Annoncephoto';
+import DetailleAnnonce from './Liste/DetailleAnnonce';
+import ListAnnonce from './Liste/ListAnnonce';
+import Settingcompte from './User/Settingcompte';
+import Menu from './accueil/Menu';
 
 
 setupIonicReact();
@@ -40,13 +47,33 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-      
+        {/* <Route exact path="/listannonce">
+          <ListAnnonce/>
+        </Route> */}
+         <Route exact path="/menu">
+          <Menu></Menu>
+        </Route>
+
+        <Route exact path="/setting">
+          <Settingcompte></Settingcompte>
+        </Route>
+
+        <Route exact path="/detaille/:id">
+          <DetailleAnnonce />
+        </Route>
+        <Route exact path="/imagephoto1">
+          <ImageFormPage1 />
+        </Route>
+        <Route exact path="/imagephoto">
+          <ImageFormPage />
+        </Route>
+        <Route exact path="/annoncephoto">
+          <Annoncephoto />
+        </Route>
         <Route exact path="/annonce5">
           <Annonce5 />
         </Route>
-        <Route exact path="/annonce4">
-          <Annonce4 />
-        </Route>
+       
         <Route exact path="/annonce3">
           <Annonce3 />
         </Route>

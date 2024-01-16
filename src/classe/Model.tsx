@@ -10,6 +10,13 @@ class Model {
         this.nommodel=nmo;
         this.idmodel=idm;
     }
-
+    trouverModelParIdentifiant(identifiant:any, tableau:Model[]) {
+        for (const objet of tableau) {
+            if (objet.idmodel == identifiant) {
+                return objet;
+            }
+        }
+        return null;
+    } 
 }
 export default Model;

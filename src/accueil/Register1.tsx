@@ -18,8 +18,7 @@ const Register1: React.FC = () => {
  
   const setGenreValue= async () =>{
     const objectliste = await storage.get("select");
-    setGenre(objectliste.data.genre);
-    
+    setGenre(objectliste.data.genre); 
   }
 
   useEffect( () => {
