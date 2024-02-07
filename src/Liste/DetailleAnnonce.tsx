@@ -834,7 +834,7 @@ const DetailleAnnonce: React.FC= () => {
         </div>
       
         <IonContent className="ion-padding">
-                    <p className='a_paragraphe'>
+        <p className='a_paragraphe'>
                         <h4> 🌟 Performance Écologique</h4>
                         Parcourez des distances incroyables grâce à une autonomie remarquable  de <strong> {datadetaille.v_liste_annonce.autonomie}</strong> km.Profitez d'une efficacité énergétique exceptionnelle pour des trajets sans compromis  avec un kilometrage de <strong>{datadetaille.v_liste_annonce.kilometrage}</strong> km.
                         <h4> 🔋 Motorisation Avancée</h4>

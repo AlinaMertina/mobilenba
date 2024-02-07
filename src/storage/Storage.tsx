@@ -1,8 +1,9 @@
 import { Storage } from '@ionic/storage';
 
-
-// Initialise une instance de stockage
 const storage = new Storage();
+async function initializeStorage() {
     await storage.create();
+}
+initializeStorage();
 
 export default storage;

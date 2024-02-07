@@ -21,7 +21,7 @@ class Client{
             this.tel=te;
             this.idflocalisation=idl;
         }
-    async insert(lien:any) : Promise<void> {
+    async insert(lien:any) : Promise<string> {
         try {
             const response = await fetch(lien, {
             method: 'POST', // Méthode HTTP (peut être GET, POST, etc.)
@@ -36,7 +36,12 @@ class Client{
             }
             const data = await response.json();
             console.log(data)
-            return data;
+            if(data.error==null){
+                return "/home";
+            }else{
+                return "/register1";
+            }
+
         } catch (error) {
             console.error('Erreur:', error);
             throw error;

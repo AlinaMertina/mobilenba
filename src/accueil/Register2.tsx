@@ -75,9 +75,11 @@ const Register2: React.FC = () => {
     event.preventDefault();
     const lien = await storage.get("mapping");
     const clientsend = new Client(null,user.nomclient,user.prenomclient,user.datenaissance,user.email,user.motdepasse,user.idfgenre,user.tel,user.idflocalisation);
-    await clientsend.insert(lien+"client");
+    const data= await clientsend.insert(lien+"client");
+    router.push(data,'root');
+   
     // await user.insert(lien+"client")
-    router.push('/register2','root');
+   
   }
   //fin fonction forme 
   return (

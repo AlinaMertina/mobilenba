@@ -221,35 +221,35 @@ const  Settingcompte: React.FC = () => {
     SetInfouser((prevData: Client) => ({
       ...prevData,
       nomclient: event.target.value,
-      insert: prevData.insert, // Assurez-vous d'inclure la propriété 'insert'
+      insert: prevData.insert, 
     }));
   };
   const inputFirstName = (event: any) => {
     SetInfouser((prevData: Client) => ({
       ...prevData,
       prenomclient: event.target.value,
-      insert: prevData.insert, // Assurez-vous d'inclure la propriété 'insert'
+      insert: prevData.insert, 
     }));
   };
   const inputDateofBirth = (event: any) => {
     SetInfouser((prevData: Client) => ({
       ...prevData,
       datenaissance: event.target.value,
-      insert: prevData.insert, // Assurez-vous d'inclure la propriété 'insert'
+      insert: prevData.insert, 
     }));
   };
   const inputIdGenre = (event: any) => {
     SetInfouser((prevData: Client) => ({
       ...prevData,
       idfgenre: event.target.value,
-      insert: prevData.insert, // Assurez-vous d'inclure la propriété 'insert'
+      insert: prevData.insert, 
     }));
   };
   const inputEmail = (event: any) => {
     SetInfouser((prevData: Client) => ({
       ...prevData,
       email: event.target.value,
-      insert: prevData.insert, // Assurez-vous d'inclure la propriété 'insert'
+      insert: prevData.insert, 
     }));
    
   };
@@ -257,21 +257,21 @@ const  Settingcompte: React.FC = () => {
     SetInfouser((prevData: Client) => ({
       ...prevData,
       motdepasse: event.target.value,
-      insert: prevData.insert, // Assurez-vous d'inclure la propriété 'insert'
+      insert: prevData.insert, 
     }));
   };
   const inputtel = (event: any) => {
     SetInfouser((prevData: Client) => ({
       ...prevData,
       tel: event.target.value,
-      insert: prevData.insert, // Assurez-vous d'inclure la propriété 'insert'
+      insert: prevData.insert, 
     }));
   };
   const inputIdlocalisation = (event: any) => {
     SetInfouser((prevData: Client) => ({
       ...prevData,
       idflocalisation: event.target.value,
-      insert: prevData.insert, // Assurez-vous d'inclure la propriété 'insert'
+      insert: prevData.insert, 
     }));
   };
   //fin handeler input
