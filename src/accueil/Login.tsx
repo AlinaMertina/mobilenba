@@ -105,9 +105,11 @@ const Login: React.FC = () => {
               </h4>
               <form onSubmit={onsub}> 
                 <div className="form-group">
+                  <label>mertinaclaudietoto@gmail.com</label>
                 <IonInput fill='outline' labelPlacement="floating" label='email' onIonChange={handleremail}  ></IonInput>
                 </div>
                 <div className="form-group">
+                 <label>mertina5041</label>
                 <IonInput fill='outline' className='ion-margin-top'  labelPlacement="floating"label='Password' type="password" onIonChange={handlerepassword} ></IonInput>
                 </div>
                 <button className='btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn'  type='submit' >
