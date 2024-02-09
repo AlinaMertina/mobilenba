@@ -11,6 +11,7 @@ const Intro_key = 'intro-seen';
 
 const Menu: React.FC = () => {
   const router = useIonRouter();
+  const [nobrNotification,setNobrNotification]=useState(" ");
   const setting = (event: any) =>{
     event.preventDefault();
     console.log('dologin');
@@ -29,22 +30,25 @@ const Menu: React.FC = () => {
   const notification = (event: any) =>{
     event.preventDefault();
     console.log('dologin');
-    router.push('/','root');
+    router.push('/notification','root');
   }
   const deconection = async (event: any) =>{
     event.preventDefault();
-    console.log('dologin');
     await storage.clear();
     const client= storage.get("idclient");
     console.log("client :"+client);
     router.push('/','root');
   }
-  
-  
-
   useEffect(() => {
+    const fetchData = async () => {
+      const nbr = await storage.get("nbrnotification");
+      console.log('dologin : ' + nbr);
+      setNobrNotification(nbr);
+    };
+  
+    fetchData();
   }, []);
-
+  
   return (
     <IonMenu contentId="main-content" style={{ background: '#178CA4' }} >
 
@@ -69,7 +73,7 @@ const Menu: React.FC = () => {
           <IonLabel>  <IonButton  onClick={listeannonce} ><IonIcon icon={list} className='iconelog'/>  </IonButton> <b style={{ color: 'white' }}> xx</b>    List de mes annonce </IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel> <IonButton  onClick={notification} > <IonIcon icon={notificationsOutline} className='iconelog'/>  </IonButton>  <b style={{ color: 'white' }}> xx</b>Notification</IonLabel>
+          <IonLabel> <IonButton  onClick={notification} > <IonIcon icon={notificationsOutline} className='iconelog'/>  </IonButton>  <b style={{ color: 'white' }}> xx</b>Notification    <b style={{ color: 'red' }}>{nobrNotification}</b> </IonLabel>
         </IonItem>
         <IonItem>
           <IonLabel>  <IonButton  onClick={deconection} > <IonIcon icon={logInOutline} className='iconelog'/>  </IonButton> <b style={{ color: 'white' }}> xx</b>  Deconnection</IonLabel>

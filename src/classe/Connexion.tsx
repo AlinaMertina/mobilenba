@@ -32,6 +32,7 @@ class Connexion{
           console.error('Erreur:', error);
           throw error;
         }
+        
       }
 
 }

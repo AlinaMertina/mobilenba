@@ -39,6 +39,8 @@ import DetailleAnnonce from './Liste/DetailleAnnonce';
 import ListAnnonce from './Liste/ListAnnonce';
 import Settingcompte from './User/Settingcompte';
 import Menu from './accueil/Menu';
+import Notification from './accueil/Notification';
+
 
 
 setupIonicReact();
@@ -50,6 +52,9 @@ const App: React.FC = () => (
         {/* <Route exact path="/listannonce">
           <ListAnnonce/>
         </Route> */}
+        <Route exact path="/notification">
+          <Notification></Notification>
+        </Route>
          <Route exact path="/menu">
           <Menu></Menu>
         </Route>

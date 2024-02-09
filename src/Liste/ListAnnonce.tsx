@@ -156,11 +156,14 @@ const ListAnnonce: React.FC<Viewannonce> = ({nommodel,nommarque,annemodel,prixde
             <form onSubmit={onsubLocalisation}> 
             <b className='welcomesetting'> Etat de l annonce</b>
             <IonSelect  placeholder=""  className='inputtype' onIonChange={inputIdlocalisation}  >
-                        {etats.map((localisation, index) => (
-                            <IonSelectOption key={index} value={localisation.idetat}>
-                              {localisation.nometat}
-                            </IonSelectOption>
-                          ))}
+            {etats.map((localisation, index) => (
+                localisation.idetat !== 2 ? (
+                  <IonSelectOption key={index} value={localisation.idetat}>
+                    {localisation.nometat}
+                  </IonSelectOption>
+                ) : null
+              ))}
+
             </IonSelect>
             <IonButton id="present-alert"  type='submit' >ok</IonButton>
             </form>

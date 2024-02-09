@@ -88,14 +88,22 @@ const Annonce: React.FC = () => {
         </IonHeader>
 
     <IonContent className="ion-padding">
-    <img src={FCC} alt="FCC" className='loginback' />
-      <div className='contentcadreregister1' >
-          <b className='welcomeannonce1'>Annonce 1</b>
-          <form onSubmit={onsub}>
-              <button className='suivant' type='submit'>
-                  <IonIcon icon={arrowForwardOutline} className='iconelog'/>
-              </button>
-              <div className='buttonlogin1'>
+         <body>
+        <div className="container-scroller">
+        <div className="container-fluid page-body-wrapper full-page-wrapper">
+      <div className="content-wrapper d-flex align-items-center auth px-0">
+        <div className="row w-100 mx-0">
+          <div className="col-lg-4 mx-auto">
+            <div className="auth-form-light text-left py-5 px-4 px-sm-5">
+              <div className="brand-logo">
+                {/* <img src="../../images/logo.svg" alt="logo"> */}
+              </div>
+              
+              <h4 style={{ fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", color: '#3f3e91' }} className="text-capitalize">
+                ajout annonce 1/6
+              </h4>
+              <form onSubmit={onsub}> 
+                <div className="form-group">
                       <IonSelect label="Marque" placeholder=""  className='inputtype' onIonChange={handleremarque}>
                         {marques.map((marque, index) => (
                           <IonSelectOption key={index} value={marque.idmarque}>
@@ -103,13 +111,17 @@ const Annonce: React.FC = () => {
                           </IonSelectOption>
                         ))}
                       </IonSelect>
-                      <IonSelect label="Model" placeholder=""  className='inputtype' onIonChange={handleremodel}>
+                </div>
+                <div className="form-group">
+                    <IonSelect label="Model" placeholder=""  className='inputtype' onIonChange={handleremodel}>
                         {models.map((model, index) => (
                           <IonSelectOption key={index} value={model.idmodel}>
                             {model.nommarque} {model.nommodel}
                           </IonSelectOption>
                         ))}
                       </IonSelect>
+                </div>
+                <div className="form-group">
                       <IonSelect label="Energie" placeholder=""  className='inputtype' onIonChange={handlerenergie}>
                         {energies.map((energie, index) => (
                           <IonSelectOption key={index} value={energie.idenergie}>
@@ -117,23 +129,36 @@ const Annonce: React.FC = () => {
                           </IonSelectOption>
                         ))}
                       </IonSelect>
-                      <IonSelect label="Boite de vitesse" placeholder=""  className='inputtype' onIonChange={handlerboitdevitesse}>
+                </div>
+                <div className="form-group">
+                <IonSelect label="Boite de vitesse" placeholder=""  className='inputtype' onIonChange={handlerboitdevitesse}>
                         {boitdevitesses.map((boitdevitesse, index) => (
                             <IonSelectOption key={index} value={boitdevitesse.idboitedevitesse}>
                               {boitdevitesse.nomboitdereception}
                             </IonSelectOption>
                           ))}
                       </IonSelect>
-              </div>
-          </form>
+                </div>
+                
+                <button className='btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn'  type='submit' >
+                   suivant
+                </button>
 
+               
               
-         
-              <button className='precedent' onClick={accuiel}>
-                  <IonIcon icon={arrowBackOutline} className='iconelog'/>
-              </button>
-          
+                <div className="text-center mt-4 font-weight-light">
+                 <a href="/home" className="text-primary">return</a>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
+   
+    </div>
+        
+        </div>
+</body>
         </IonContent>
 
       </IonPage>

@@ -69,7 +69,9 @@ const ImageFormPage1: React.FC = () => {
     const annonce = await storage.get("annonce");
     const infoclient = await storage.get("userinfo");
     console.log(infoclient)
-    const caracteristique = new Caracteristique(annonce.idcaracteristique,annonce.idfetat,infoclient.idclient,annonce.idfboitedevitesse,annonce.idfmarque,annonce.idfmodel,annonce.idfenergie,annonce.idftypevehicule,annonce.idlocalisation,annonce.autonomie,annonce.kilometrage,annonce.anneedefabrication,annonce.annemodel,annonce.capacite,annonce.consomation,annonce.prixdevente,annonce.coleur,annonce.nbrporte,annonce.nbrplace,annonce.longueur,annonce.largeur,annonce.hauteur,annonce.volumeducoffre,annonce.commission)
+    const caracteristique = new Caracteristique(annonce.idcaracteristique,annonce.idfetat,infoclient.idclient,annonce.idfboitedevitesse,annonce.idfmarque,annonce.idfmodel,annonce.idfenergie,annonce.idftypevehicule,annonce.idlocalisation,annonce.autonomie,annonce.kilometrage,annonce.anneedefabrication,null,annonce.capacite,annonce.consomation,annonce.prixdevente,annonce.coleur,annonce.nbrporte,annonce.nbrplace,annonce.longueur,annonce.largeur,annonce.hauteur,annonce.volumeducoffre,annonce.commission)
+    console.log(" cvvcvcvvcvcvcvcvvcvcvcvvvvvvv");
+    console.log(caracteristique);
     const listeequipement = await storage.get("equipement");
     await sender.insert(imageInputs,caracteristique,listeequipement,lienmap);
     console.log(imageInputs);
@@ -94,7 +96,7 @@ const ImageFormPage1: React.FC = () => {
         <IonContent className="ion-padding">
         <img src={FCC} alt="FCC" className='loginback' />
           <div className='contentcadreregister1' >
-            <b className='welcomeannonce1'>Ajout image 1</b>
+          <b className='welcomeannonce1'> ajout annonce 6/6</b>
           <form onSubmit={onsub}>
               {imageInputs.map((input, index) => (
                 <IonItem key={index}>

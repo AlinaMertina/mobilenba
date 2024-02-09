@@ -13,10 +13,10 @@ const Accuiel: React.FC = () => {
   const router = useIonRouter();
 
   const initializeMapping = async () => {
-    await storage.set('mapping', 'http://localhost:8080/varotrafiaraback/');
-    await storage.set('mappingimage', 'http://localhost:8080/images/');
+    await storage.set('mapping', 'https://varotrafiaraoccasion-production.up.railway.app/varotrafiaraback/');
+    await storage.set('mappingimage', 'https://varotrafiaraoccasion-production.up.railway.app/images/');
       try {
-        const response = await fetch("http://localhost:8080/varotrafiaraback/initialisation", {
+        const response = await fetch("https://varotrafiaraoccasion-production.up.railway.app/varotrafiaraback/initialisation", {
           method: 'GET', // Méthode HTTP (peut être GET, POST, etc.)
           headers: {
             'Content-Type': 'application/json' // Type de contenu de la requête

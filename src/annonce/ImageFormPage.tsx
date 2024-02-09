@@ -39,7 +39,7 @@ const ImageFormPage: React.FC = () => {
     <IonPage>
       <img src={FCC} alt="FCC" className='loginback' />
       <div className='contentcadreregister1' >
-          <b className='welcomeannonce1'>Ajout image</b>
+          <b className='welcomeannonce1'> ajout annonce 6/6</b>
                 {/* <button  type='submit'>
                     <IonIcon icon={arrowForwardOutline} className='iconelog'/>
                 </button> */}

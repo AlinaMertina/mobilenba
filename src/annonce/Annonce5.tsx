@@ -88,26 +88,52 @@ const Annonce5: React.FC = () => {
         </IonHeader>
 
         <IonContent className="ion-padding">
-        <img src={FCC} alt="FCC" className='loginback' />
-        
-        <div className='contentcadreregister1' >
-          <b className='welcomeannonce1'>Annonce 5</b>
-            <form onSubmit={onsub}>
-              <button className='suivant' type='submit'>
-                  <IonIcon icon={arrowForwardOutline} className='iconelog'/>
-              </button>
-              <div className='buttonlogin1'>
-                    <IonInput fill='outline' labelPlacement="floating" label='Largeur en m' type='number' className='inputtype' onIonChange={handlerLargeur}></IonInput>
-                    <IonInput fill='outline' labelPlacement="floating" label='hauteur en m' className='inputtype' onIonChange={handlerhauteur}></IonInput>
-                    <IonInput fill='outline' labelPlacement="floating" label='Volume du coffre en m' className='inputtype' onIonChange={handlereVolume}></IonInput>
-                    <IonInput fill='outline' labelPlacement="floating" label='Consomation en m' className='inputtype' onIonChange={handlerCosomation}></IonInput>
+        <body>
+        <div className="container-scroller">
+        <div className="container-fluid page-body-wrapper full-page-wrapper">
+      <div className="content-wrapper d-flex align-items-center auth px-0">
+        <div className="row w-100 mx-0">
+          <div className="col-lg-4 mx-auto">
+            <div className="auth-form-light text-left py-5 px-4 px-sm-5">
+              <div className="brand-logo">
+                {/* <img src="../../images/logo.svg" alt="logo"> */}
               </div>
-            </form>
-              <button className='precedent' onClick={accuiel}>
-                  <IonIcon icon={arrowBackOutline} className='iconelog'/>
-              </button>
-          
+              
+              <h4 style={{ fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", color: '#3f3e91' }} className="text-capitalize">
+              ajout annonce 5/6
+              </h4>
+              <form onSubmit={onsub}> 
+                <div className="form-group">
+                <IonInput fill='outline' labelPlacement="floating" label='Largeur en metre' type='number' className='inputtype' onIonChange={handlerLargeur}></IonInput>
+                </div>
+                <div className="form-group">
+                <IonInput fill='outline' labelPlacement="floating" label='hauteur en metre' className='inputtype' onIonChange={handlerhauteur}></IonInput>
+                </div>
+                <div className="form-group">
+                <IonInput fill='outline' labelPlacement="floating" label='Volume du coffre en metre' className='inputtype' onIonChange={handlereVolume}></IonInput>
+                </div>
+                <div className="form-group">
+                <IonInput fill='outline' labelPlacement="floating" label='Consomation en metre' className='inputtype' onIonChange={handlerCosomation}></IonInput>
+                </div>
+                <button className='btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn'  type='submit' >
+                   suivant
+                </button>
+
+                <div className="text-center mt-4 font-weight-light">
+                 <a href="/annonce3" className="text-primary">return</a>
+                </div>
+
+
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
+   
+    </div>
+        
+        </div>
+</body>
         </IonContent>
 
       </IonPage>

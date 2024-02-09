@@ -73,7 +73,8 @@ const Register1: React.FC = () => {
 
   return (
     <IonPage  >
-        <img src={FCC} alt="FCC" className='loginback' />
+
+        {/* <img src={FCC} alt="FCC" className='loginback' />
         
         <div className='contentcadreregister1' >
           <b className='welcomeregister1'>Register 1</b>
@@ -100,7 +101,68 @@ const Register1: React.FC = () => {
                   <IonIcon icon={arrowBackOutline} className='iconelog'/>
               </button>
           
+        </div> */}
+
+
+<body>
+  <div className="container-scroller">
+    <div className="container-fluid page-body-wrapper full-page-wrapper">
+      <div className="content-wrapper d-flex align-items-center auth px-0">
+        <div className="row w-100 mx-0">
+          <div className="col-lg-4 mx-auto">
+            <div className="auth-form-light text-left py-5 px-4 px-sm-5">
+              <div className="brand-logo">
+                {/* <img src="../../images/logo.svg" alt="logo"/> */}
+              </div>
+              <h4 style={{ fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", color: '#3f3e91' }} className="text-capitalize">
+              Inscription
+              </h4>
+
+              {/* <h4>Inscription</h4> */}
+              {/* <h6 className="font-weight-light">Signing up is easy. It only takes a few steps</h6> */}
+              <form onSubmit={onsub} >
+
+                <div className="form-group">
+                  <IonInput fill='outline' labelPlacement="floating" label='Name' className='inputtype' onIonChange={handlerName}></IonInput>
+                </div>
+                <div className="form-group">
+                  <IonInput fill='outline' labelPlacement="floating" label='First Name'  className='inputtype'onIonChange={handlerFirstName} ></IonInput>
+                </div>
+                <div className="form-group">
+                  <IonInput fill='outline' labelPlacement="floating" label='Date of birth'  className='inputtype' type="date" onIonChange={handlerDateofBirth}></IonInput>
+                </div>
+               
+                <div className="form-group">
+                  <IonSelect label="Genre" placeholder=""  className='inputtype' onIonChange={handlerIdGenre}>
+                        {genreliste.map((genre, index) => (
+                          <IonSelectOption key={index} value={genre.idgenre}>
+                            {genre.nomgenre}
+                          </IonSelectOption>
+                        ))}
+                      </IonSelect>
+                </div>
+
+                <button className='btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn'  type='submit' >
+                 SUIVANT
+                </button>
+
+                {/* <div className="mt-3">
+                  <a className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SUIVANT</a>
+                </div> */}
+                <div className="text-center mt-4 font-weight-light">
+                   Already have an account? <a href="/" className="text-primary">Login</a>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
+     
+    </div>
+
+  </div>
+  
+</body>
       
     </IonPage>
   );
